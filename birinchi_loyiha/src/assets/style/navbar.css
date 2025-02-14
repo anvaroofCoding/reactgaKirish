@@ -1,0 +1,78 @@
+:root {
+	--purples: #5d5fef;
+}
+nav {
+	height: 80px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.nav-btn {
+	display: flex;
+	gap: 12px;
+}
+.nav-btn button {
+	font-family: 'Playfair Display', serif;
+	padding: 7px 10px;
+	font-size: 16px;
+	color: var(--purples);
+	font-weight: 700;
+	background-color: transparent;
+	border: none;
+	transition-duration: 1s;
+	border-radius: 4px;
+}
+.nav-btn button:hover {
+	background-color: var(--purples);
+	color: white;
+}
+.nav-avatar {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+}
+/* .nav-avatar a {
+	text-decoration: none;
+	color: var(--purples);
+	font-family: 'Roboto', serif;
+	font-weight: 700;
+	font-size: 16px;
+	padding: 5px;
+	border-bottom: 2px solid transparent;
+}
+.nav-avatar a:hover {
+	border-color: var(--purples);
+} */
+.nav-avatar a {
+	text-decoration: none;
+	color: #a3a3a3;
+	font-family: 'Roboto', serif;
+	font-weight: 700;
+	font-size: 16px;
+	padding: 5px;
+	position: relative; /* Pseudo-element uchun kerak */
+}
+
+.nav-avatar a::after {
+	content: '';
+	position: absolute;
+	left: 50%;
+	bottom: 0;
+	width: 0; /* Boshlanishda border yo‘q */
+	height: 2px;
+	background-color: var(--purples);
+	transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+	transform: translateX(-50%); /* Markazga joylashtirish */
+}
+
+.nav-avatar a:hover::after {
+	width: 40%; /* Border uzunligini qisqartirish */
+}
+.nav-avatar a:hover {
+	color: var(--purples);
+}
+.nav-hr {
+	width: 85%;
+	margin: 0 auto;
+	border: 0.5px solid rgba(128, 128, 128, 0.515);
+}
